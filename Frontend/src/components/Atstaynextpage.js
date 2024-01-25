@@ -476,7 +476,7 @@ function Atstaynextpage() {
                     {/* <hr style={{ width: "130%" }} /> */}
                     {/*  */}
 
-                    <div style={{ width: "50%" }}>
+                    <div style={{ width: "50%" }} id="rules-container">
                       <h3
                         className="my-3 colorss mt-5 mb-4"
                         style={{
@@ -923,7 +923,7 @@ function Atstaynextpage() {
 
       <Footer></Footer>
 
-      <div
+      {/* <div
         className="whitebox w-100 bg-white d-none"
         style={{
           height: "80px",
@@ -956,7 +956,7 @@ function Atstaynextpage() {
             Book Now
           </button>
         </div>
-      </div>
+      </div> */}
     </>
   );
 }
