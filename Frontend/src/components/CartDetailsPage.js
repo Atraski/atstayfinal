@@ -241,8 +241,12 @@ export default function CartDetailsPage() {
                       {elm.roomtype}
                     </h6>
 
-                    <div className="locationtrip my-3">
-                      <i className="fa-solid fa-location-dot" /> {elm.place}
+                    <div className="locationtrip my-3" style={{display:'flex', gap:'10px'}}>
+                      <i className="fa-solid fa-location-dot" /> 
+                      <span>
+                      
+                      {elm.place}
+                      </span>
                     </div>
 
                     {/* <div className="tourtype">
@@ -250,7 +254,10 @@ export default function CartDetailsPage() {
                             </div> */}
 
                     <div className="departurDate">
-                      <p>Checkin : {checkinn}</p>
+                      <p>Checkin : <span>
+                      {checkinn}
+                      </span>
+                      </p>
                     </div>
 
                     <div className="Duration">
@@ -258,24 +265,15 @@ export default function CartDetailsPage() {
                     </div>
 
                     <div className="numberofdaysss">
-                      {diff} Days to Stay = {diff}{" "}
-                      <i
-                        class="fa-solid fa-xmark"
-                        style={{ fontSize: "10px" }}
-                      ></i>{" "}
-                      {elm.price} = {diff * elm.price}
+                      {diff} Days to Stay = {diff} x {elm.price} = {diff * elm.price}
                     </div>
 
                     <div className="bookingDetails my-3">
                       <p>Adult : {adult} </p>
                       <p>Children : {child}</p>
                       <p>
-                        Number of Room : {room} = {room}{" "}
-                        <i
-                          class="fa-solid fa-xmark"
-                          style={{ fontSize: "10px" }}
-                        ></i>{" "}
-                        {diff * elm.price} = {room * diff * elm.price}
+                        Number of Room : {room} = {room} x {diff * elm.price} = {room * diff * elm.price}
+                        
                       </p>
                       <div className="total">
                         Total amount : ₹ {room * diff * elm.price}
@@ -284,7 +282,7 @@ export default function CartDetailsPage() {
                   </div>
                   <div
                     className="Pricesss "
-                    style={{ fontSize: "25px", marginLeft: "34px" }}
+                    style={{ fontSize: "25px", marginLeft: "45px" }}
                   >
                     ₹ {elm.price}
                   </div>
