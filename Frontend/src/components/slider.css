@@ -9,6 +9,9 @@
     cursor:pointer;
 }
 
+
+
+
 .product-container div{
     display:flex;
     flex-direction: column;
@@ -27,17 +30,19 @@
     position: relative;
     overflow:hidden;
     width:900px !important;
-    margin-left:100px;
+    margin:auto;
 }
 
 .product-container{
     /* padding: 0 10px; */
-    padding-left:50px;
+    padding-left:476px;
     margin-top:6px;
     display:flex;
     overflow-x:hidden;
     scroll-behavior:smooth;
     justify-content: space-around;
+    gap:20px;
+    width:850px;
 }
 
 .pre-btn , .next-btn{
