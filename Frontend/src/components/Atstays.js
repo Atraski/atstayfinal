@@ -1,23 +1,23 @@
-import React, { useState } from 'react';
-import Navbar from './Navbar';
-import './Atstays.css';
-import './slider.css';
-import attour1 from '../images/attour1.webp';
-import { Link, useNavigate, useParams } from 'react-router-dom';
-import rooms from '../images/rooms.jpg';
-import beach from '../images/beach.jpg';
-import lake from '../images/lake.jpg';
-import camping from '../images/camping.jpg';
-import trending from '../images/trending.jpg';
-import mansion from '../images/Mansion.jpg';
-import tea from '../images/tea.jpg';
+import React, { useState } from "react";
+import Navbar from "./Navbar";
+import "./Atstays.css";
+import "./slider.css";
+import attour1 from "../images/attour1.webp";
+import { Link, useNavigate, useParams } from "react-router-dom";
+import rooms from "../images/rooms.jpg";
+import beach from "../images/beach.jpg";
+import lake from "../images/lake.jpg";
+import camping from "../images/camping.jpg";
+import trending from "../images/trending.jpg";
+import mansion from "../images/Mansion.jpg";
+import tea from "../images/tea.jpg";
 
-import { productData } from './Atstaysdata';
-import Footers from './Footer';
-import Slider from 'react-slider';
+import { productData } from "./Atstaysdata";
+import Footers from "./Footer";
+import Slider from "react-slider";
 
-const MIN = 750.00;
-const MAX = 17400.00;
+const MIN = 750.0;
+const MAX = 17400.0;
 
 export default function Atstays() {
   const params = useParams();
@@ -26,7 +26,7 @@ export default function Atstays() {
   const [num, setnum] = useState(0);
   const [nums, setnums] = useState(0);
   const [numss, setnumss] = useState(0);
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState("");
 
   const [selectedPriceRange, setSelectedPriceRange] = useState([MIN, MAX]);
 
@@ -74,7 +74,7 @@ export default function Atstays() {
 
   const btnpressprev = () => {
     // const box = document.getElementById('box'); // Get the element by its id
-  let box = document.querySelector('.product-container');
+    let box = document.querySelector(".product-container");
 
     if (box) {
       const width = box.clientWidth;
@@ -83,11 +83,11 @@ export default function Atstays() {
     } else {
       console.error('Element with id "box" not found.');
     }
-  }
-  
+  };
+
   const btnpressnext = () => {
     // const box = document.getElementById('box'); // Get the element by its id
-  let box = document.querySelector('.product-container');
+    let box = document.querySelector(".product-container");
 
     if (box) {
       const width = box.clientWidth;
@@ -96,17 +96,17 @@ export default function Atstays() {
     } else {
       console.error('Element with id "box" not found.');
     }
-  }
+  };
 
-  const clickhere=()=>{
-    const help = document.querySelector('.hideeee');
-    help.style.setProperty('display', 'block', 'important');
-  }
+  const clickhere = () => {
+    const help = document.querySelector(".hideeee");
+    help.style.setProperty("display", "block", "important");
+  };
 
-  const hidebox=()=>{
-    const hideboxs = document.querySelector('.hideeee');
-    hideboxs.style.setProperty('display', 'none', 'important')
-  }
+  const hidebox = () => {
+    const hideboxs = document.querySelector(".hideeee");
+    hideboxs.style.setProperty("display", "none", "important");
+  };
 
   return (
     <div>
@@ -282,17 +282,25 @@ export default function Atstays() {
 
        */}
 
-
       <div className="container-fluid">
-        <div className="imgbg" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-          <div 
+        <div
+          className="imgbg"
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            maxWidth: "100%",
+            overflow: "hidden",
+          }}
+        >
+          <div
             style={{
-              backgroundColor: 'rgba(0,0,0,0.6)',
-              width: '650px',
-              display: 'flex',
-              alignItems: 'center',
-              border: '1px solid #66cccc',
-              borderRadius: '10px',
+              backgroundColor: "rgba(0,0,0,0.6)",
+              width: "650px",
+              display: "flex",
+              alignItems: "center",
+              border: "1px solid #66cccc",
+              borderRadius: "10px",
             }}
           >
             <input
@@ -300,36 +308,54 @@ export default function Atstays() {
               placeholder="Search your destination"
               className="ps-3 place"
               style={{
-                width: '100%',
-                height: '40px',
-                background: 'none',
-                border: 'none',
-                outline: 'none',
-                color: 'white',
+                width: "100%",
+                height: "40px",
+                background: "none",
+                border: "none",
+                outline: "none",
+                color: "white",
               }}
               onChange={(e) => setSearchQuery(e.target.value)}
             />
-            <i style={{ color: 'white' }} class="fa-solid fa-magnifying-glass me-2"></i>
+            <i
+              style={{ color: "white" }}
+              class="fa-solid fa-magnifying-glass me-2"
+            ></i>
           </div>
         </div>
       </div>
 
-      <div style={{ display: 'flex' }}>
+      <div style={{ display: "flex" }}>
         <div className="container-fluid">
           <div className="row">
             <div className="col-md-4 hideeee">
-              
-
-              <div  style={{ width: '65%', margin: 'auto', border: '3px solid #66cccc', borderRadius: '10px' }} className="mt-5 fil">
-                <div className="filter_heading d-flex justify-content-between p-3" style={{ borderBottom: '1px solid #66cccc' }}>
+              <div
+                style={{
+                  width: "65%",
+                  margin: "auto",
+                  border: "3px solid #66cccc",
+                  borderRadius: "10px",
+                }}
+                className="mt-5 fil"
+              >
+                <div
+                  className="filter_heading d-flex justify-content-between p-3"
+                  style={{ borderBottom: "1px solid #66cccc" }}
+                >
                   <h5>FILTER BY</h5>
-                <span className="btn disply"style={{border:'1px solid black' , display:'none'}} onClick={hidebox}>Close</span>
-
+                  <span
+                    className="btn disply"
+                    style={{ border: "1px solid black", display: "none" }}
+                    onClick={hidebox}
+                  >
+                    Close
+                  </span>
                 </div>
 
                 <div className="filterRange p-3">
                   <h6>Filter Price</h6>
-                  <span className="mb-4">₹{selectedPriceRange[0]}</span> <span>₹{selectedPriceRange[1]}</span>
+                  <span className="mb-4">₹{selectedPriceRange[0]}</span>{" "}
+                  <span>₹{selectedPriceRange[1]}</span>
                   <Slider
                     className={"slider mt-2"}
                     value={selectedPriceRange}
@@ -337,7 +363,10 @@ export default function Atstays() {
                     max={MAX}
                     onChange={setSelectedPriceRange}
                   />
-                  <h6 className="mt-3" style={{ color: '#66cccc', cursor: 'pointer' }}>
+                  <h6
+                    className="mt-3"
+                    style={{ color: "#66cccc", cursor: "pointer" }}
+                  >
                     APPLY
                   </h6>
                 </div>
@@ -412,36 +441,78 @@ export default function Atstays() {
             </div>
 
             <div className="col-md-8 exp">
-            <div>  <span className="btn mt-2 openn" style={{width:'10%', float:'right',border:'1px solid black' ,marginRight:'50px' , display:'none' }} onClick={clickhere}>Filter</span>            </div>
+              <div>
+                <span
+                  className="btn mt-2 openn"
+                  style={{
+                    width: "10%",
+                    float: "right",
+                    border: "1px solid black",
+                    marginRight: "50px",
+                    display: "none",
+                    position: "relative",
+                    top: "30px",
+                  }}
+                  onClick={clickhere}
+                >
+                  Filter
+                </span>
+              </div>
 
-<h4 className="mt-5 mx-3">{filterTour.length} stays found</h4>
+              <h4 className="mt-5 mx-3">{filterTour.length} stays found</h4>
               <div className="container-fluid d-flex flex-wrap justify-content-between setup">
-                {filterTourCards().map((datas) => {
+                {filterTourCards().map((datas, id) => {
                   return (
-                    <Link to={`/atstay/${datas.id}`}>
-                      <div className="card mt-5" style={{ borderRadius: '15px', width: '280px', height: '320px' }}>
-                        <div className="images">
-                          <img
-                            src={datas.imges}
-                            className="img-fluid"
-                            style={{ height: '200px', width: '280px', borderTopLeftRadius: '15px', borderTopRightRadius: '15px' }}
-                          ></img>
-                        </div>
+                    <div key={id}>
+                      <Link to={`/atstay/${datas.id}`}>
+                        <div
+                          className="card mt-5"
+                          style={{
+                            borderRadius: "15px",
+                            width: "280px",
+                            height: "320px",
+                          }}
+                        >
+                          <div className="images">
+                            <img
+                              src={datas.imges}
+                              className="img-fluid"
+                              style={{
+                                height: "200px",
+                                width: "280px",
+                                borderTopLeftRadius: "15px",
+                                borderTopRightRadius: "15px",
+                              }}
+                            ></img>
+                          </div>
 
-                        <div className="tourinfo">
-                          <p className="my-2 mx-2" style={{ textTransform: 'uppercase', fontSize: '12px' }}>
-                            <i className="fa-solid fa-location-dot mx-1"></i>
-                            {datas.place}
-                          </p>
-                          <h6 className="mx-2 ">{datas.trip}</h6>
-                          <span className="mx-2">
-                            <i class="fa-regular fa-clock mx-1 my-3" style={{ fontSize: '12px' }}></i>
-                            {datas.days}
-                          </span>
-                          <span className="mx-2">₹{datas.price}</span>
+                          <div className="tourinfo">
+                            <p
+                              className="my-2 mx-2"
+                              style={{
+                                textTransform: "uppercase",
+                                fontSize: "12px",
+                                display: "flex",
+                              }}
+                            >
+                              <i className="fa-solid fa-location-dot mx-1"></i>
+                              {datas.place}
+                            </p>
+                            <div style={{ minHeight: "2.5rem" }}>
+                              <h6 className="mx-2 ">{datas.trip}</h6>
+                            </div>
+                            <span className="mx-2">
+                              <i
+                                class="fa-regular fa-clock mx-1 my-3"
+                                style={{ fontSize: "12px" }}
+                              ></i>
+                              {datas.days}
+                            </span>
+                            <span className="mx-2">₹{datas.price}</span>
+                          </div>
                         </div>
-                      </div>
-                    </Link>
+                      </Link>
+                    </div>
                   );
                 })}
               </div>
