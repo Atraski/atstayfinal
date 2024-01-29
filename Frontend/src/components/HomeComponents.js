@@ -293,7 +293,7 @@ export default function HomeComponents() {
         </div>
       </div>
 
-      <div className="product-carousel" {...handlers}>
+      <div className="product-carousel" {...handlers} style={{maxWidth:'95vw'}}>
         <button className="pre-btn" onClick={btnpressprev}>
           <p>
             <img src={less} style={{ width: "22px" }} />
@@ -316,7 +316,7 @@ export default function HomeComponents() {
               alt="First slide"
               onClick={() => handleProductClick(1)}
             />
-            <p>rooms</p>
+            <p>Rooms</p>
           </div>
 
           <div>
