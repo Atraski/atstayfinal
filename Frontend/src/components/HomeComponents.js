@@ -18,6 +18,15 @@ import trending from "../images/trending.jpg";
 import mansion from "../images/Mansion.jpg";
 import tea from "../images/tea.jpg";
 import less from "../images/less.png";
+import Beach from "../images/Beach.png"
+import CityView from "../images/CityView.png"
+import Heritage from "../images/Heritage.png"
+import TreeHouse from "../images/TreeHouse.png"
+import SunView from "../images/SunView.png"
+import NationalPark from "../images/NationalPark.png"
+import BedBreakFast from "../images/Bed&Breakfast.png"
+import Tropical from "../images/Tropical.png"
+import Luxe from "../images/Luxe.png"
 // import './HomeComponents.css';
 import Footer from "./Footer";
 import "./HomeComponents.css";
@@ -332,11 +341,21 @@ export default function HomeComponents() {
           <div>
             <img
               className="d-block mycard"
+              src={NationalPark}
+              alt="First slide"
+              onClick={() => handleProductClick1(2)}
+            />
+            <p>National Park</p>
+          </div>
+          
+          <div>
+            <img
+              className="d-block mycard"
               src={lake}
               alt="First slide"
               onClick={() => handleProductClick2(3)}
             />
-            <p>View</p>
+            <p>Amazing View</p>
           </div>
 
           <div>
@@ -388,6 +407,85 @@ export default function HomeComponents() {
             />
             <p>Amazing View</p>
           </div>
+
+          <div>
+          <img
+            className="d-block mycard"
+            src={Beach}
+            alt="First slide"
+            onClick={() => handleProductClick7(8)}
+          />
+          <p>Beach</p>
+        </div>
+        <div>
+        <img
+          className="d-block mycard"
+          src={CityView}
+          alt="First slide"
+          onClick={() => handleProductClick7(8)}
+        />
+        <p>City View</p>
+      </div>
+
+      <div>
+      <img
+        className="d-block mycard"
+        src={Heritage}
+        alt="First slide"
+        onClick={() => handleProductClick7(8)}
+      />
+      <p>Heritage</p>
+    </div>
+
+    <div>
+    <img
+      className="d-block mycard"
+      src={TreeHouse}
+      alt="First slide"
+      onClick={() => handleProductClick7(8)}
+    />
+    <p>Tree House</p>
+  </div>
+
+  <div>
+  <img
+    className="d-block mycard"
+    src={SunView}
+    alt="First slide"
+    onClick={() => handleProductClick7(8)}
+  />
+  <p>Sun View</p>
+</div>
+
+<div>
+<img
+  className="d-block mycard"
+  src={Luxe}
+  alt="First slide"
+  onClick={() => handleProductClick7(8)}
+/>
+<p>Luxe</p>
+</div>
+
+<div>
+<img
+  className="d-block mycard"
+  src={BedBreakFast}
+  alt="First slide"
+  onClick={() => handleProductClick7(8)}
+/>
+<p>Bed & Breakfast</p>
+</div>
+
+<div>
+<img
+  className="d-block mycard"
+  src={Tropical}
+  alt="First slide"
+  onClick={() => handleProductClick7(8)}
+/>
+<p>Tropical</p>
+</div>
 
           {/* <div>
 <img
