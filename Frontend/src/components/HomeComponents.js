@@ -18,15 +18,15 @@ import trending from "../images/trending.jpg";
 import mansion from "../images/Mansion.jpg";
 import tea from "../images/tea.jpg";
 import less from "../images/less.png";
-import Beach from "../images/Beach.png"
-import CityView from "../images/CityView.png"
-import Heritage from "../images/Heritage.png"
-import TreeHouse from "../images/TreeHouse.png"
-import SunView from "../images/SunView.png"
-import NationalPark from "../images/NationalPark.png"
-import BedBreakFast from "../images/Bed&Breakfast.png"
-import Tropical from "../images/Tropical.png"
-import Luxe from "../images/Luxe.png"
+import Beach from "../images/Beach.png";
+import CityView from "../images/CityView.png";
+import Heritage from "../images/Heritage.png";
+import TreeHouse from "../images/TreeHouse.png";
+import SunView from "../images/SunView.png";
+import NationalPark from "../images/NationalPark.png";
+import BedBreakFast from "../images/Bed&Breakfast.png";
+import Tropical from "../images/Tropical.png";
+import Luxe from "../images/Luxe.png";
 // import './HomeComponents.css';
 import Footer from "./Footer";
 import "./HomeComponents.css";
@@ -34,10 +34,13 @@ import { useSwipeable } from "react-swipeable";
 import Dropdown from "./dropdown";
 
 import { productData } from "./Atstaysdata";
+import PopUp from "../pages/home/components/PopUp";
 
 export default function HomeComponents() {
   const [imgs, setImg] = useState(productData);
   const [searchQuery, setSearchQuery] = useState("");
+  const [showPopUp, setShowPopUp] = useState(false);
+  const [isCoverVisible, setIsCoverVisible] = useState(false);
 
   const btnpressprev = () => {
     // const box = document.getElementById('box'); // Get the element by its id
@@ -186,12 +189,12 @@ export default function HomeComponents() {
     onSwipedRight: () => handleSwipe("right"),
   });
 
-  const [isCoverVisible, setIsCoverVisible] = useState(false);
   const coverRef = useRef(null);
   const anywhereRef = useRef(null);
 
   const openbox = () => {
     setIsCoverVisible(!isCoverVisible);
+    console.log("open box clicked", isCoverVisible);
   };
 
   const handleOutsideClick = (event) => {
@@ -215,12 +218,24 @@ export default function HomeComponents() {
   );
   //
 
+  const closeBtn = () => {
+    setIsCoverVisible(false);
+    console.log("open box clicked", isCoverVisible);
+  };
   return (
     <>
       <div style={{ margin: "auto" }}>
         <div className="boxrad my-3">
           <div className="subbox">
-            <div className="any" ref={anywhereRef} onClick={openbox}>
+            <div
+              className="any"
+              ref={anywhereRef}
+              onClick={(e) => {
+                e.stopPropagation();
+                setShowPopUp(true);
+                openbox();
+              }}
+            >
               AnyWhere
             </div>
           </div>
@@ -228,6 +243,7 @@ export default function HomeComponents() {
 
         <div className="coverss">
           <div
+            id="pc"
             className={`cover ${isCoverVisible ? "visible" : ""}`}
             ref={coverRef}
             style={{
@@ -301,8 +317,24 @@ export default function HomeComponents() {
           </div>
         </div>
       </div>
+      <div id="mobile">
+        <PopUp
+          onclick={closeBtn}
+          img={logo}
+          isCoverVisible={isCoverVisible}
+          setSearchQuery={setSearchQuery}
+          searchQuery={searchQuery}
+          setIsCoverVisible={setIsCoverVisible}
+          showPopUp={showPopUp}
+          setShowPopUp={setShowPopUp}
+        />
+      </div>
 
-      <div className="product-carousel" {...handlers} style={{maxWidth:'95vw'}}>
+      <div
+        className="product-carousel"
+        {...handlers}
+        style={{ maxWidth: "95vw" }}
+      >
         <button className="pre-btn" onClick={btnpressprev}>
           <p>
             <img src={less} style={{ width: "22px" }} />
@@ -347,7 +379,7 @@ export default function HomeComponents() {
             />
             <p>National Park</p>
           </div>
-          
+
           <div>
             <img
               className="d-block mycard"
@@ -409,130 +441,83 @@ export default function HomeComponents() {
           </div>
 
           <div>
-          <img
-            className="d-block mycard"
-            src={Beach}
-            alt="First slide"
-            onClick={() => handleProductClick7(8)}
-          />
-          <p>Beach</p>
-        </div>
-        <div>
-        <img
-          className="d-block mycard"
-          src={CityView}
-          alt="First slide"
-          onClick={() => handleProductClick7(8)}
-        />
-        <p>City View</p>
-      </div>
+            <img
+              className="d-block mycard"
+              src={Beach}
+              alt="First slide"
+              onClick={() => handleProductClick7(8)}
+            />
+            <p>Beach</p>
+          </div>
+          <div>
+            <img
+              className="d-block mycard"
+              src={CityView}
+              alt="First slide"
+              onClick={() => handleProductClick7(8)}
+            />
+            <p>City View</p>
+          </div>
 
-      <div>
-      <img
-        className="d-block mycard"
-        src={Heritage}
-        alt="First slide"
-        onClick={() => handleProductClick7(8)}
-      />
-      <p>Heritage</p>
-    </div>
+          <div>
+            <img
+              className="d-block mycard"
+              src={Heritage}
+              alt="First slide"
+              onClick={() => handleProductClick7(8)}
+            />
+            <p>Heritage</p>
+          </div>
 
-    <div>
-    <img
-      className="d-block mycard"
-      src={TreeHouse}
-      alt="First slide"
-      onClick={() => handleProductClick7(8)}
-    />
-    <p>Tree House</p>
-  </div>
+          <div>
+            <img
+              className="d-block mycard"
+              src={TreeHouse}
+              alt="First slide"
+              onClick={() => handleProductClick7(8)}
+            />
+            <p>Tree House</p>
+          </div>
 
-  <div>
-  <img
-    className="d-block mycard"
-    src={SunView}
-    alt="First slide"
-    onClick={() => handleProductClick7(8)}
-  />
-  <p>Sun View</p>
-</div>
+          <div>
+            <img
+              className="d-block mycard"
+              src={SunView}
+              alt="First slide"
+              onClick={() => handleProductClick7(8)}
+            />
+            <p>Sun View</p>
+          </div>
 
-<div>
-<img
-  className="d-block mycard"
-  src={Luxe}
-  alt="First slide"
-  onClick={() => handleProductClick7(8)}
-/>
-<p>Luxe</p>
-</div>
+          <div>
+            <img
+              className="d-block mycard"
+              src={Luxe}
+              alt="First slide"
+              onClick={() => handleProductClick7(8)}
+            />
+            <p>Luxe</p>
+          </div>
 
-<div>
-<img
-  className="d-block mycard"
-  src={BedBreakFast}
-  alt="First slide"
-  onClick={() => handleProductClick7(8)}
-/>
-<p>Bed & Breakfast</p>
-</div>
+          <div>
+            <img
+              className="d-block mycard"
+              src={BedBreakFast}
+              alt="First slide"
+              onClick={() => handleProductClick7(8)}
+            />
+            <p>Bed & Breakfast</p>
+          </div>
 
-<div>
-<img
-  className="d-block mycard"
-  src={Tropical}
-  alt="First slide"
-  onClick={() => handleProductClick7(8)}
-/>
-<p>Tropical</p>
-</div>
-
-          {/* <div>
-<img
-  className="d-block mycard"
-  src={rooms}
-  alt="First slide"
-  
-  
-/>
-<p>rooms</p>
-</div>
-
-
-<div>
-<img
-  className="d-block mycard"
-  src={rooms}
-  alt="First slide"
-  
-  
-/>
-<p>rooms</p>
-</div>
-
-
-<div>
-<img
-  className="d-block mycard"
-  src={rooms}
-  alt="First slide"
-  
-  
-/>
-<p>rooms</p>
-</div>
-
-
-<div>
-<img
-  className="d-block mycard"
-  src={rooms}
-  alt="First slide"
-  
-  
-/>
-<p>rooms</p>
-</div>*/}
+          <div>
+            <img
+              className="d-block mycard"
+              src={Tropical}
+              alt="First slide"
+              onClick={() => handleProductClick7(8)}
+            />
+            <p>Tropical</p>
+          </div>
         </div>
       </div>
 
@@ -599,52 +584,6 @@ export default function HomeComponents() {
           );
         })}
       </div>
-
-      {/* <div>
-      <div className="container">
-          <h2 className="mt-5">Our Commitment to Safe Holidays</h2>
-
-          <div className="d-flex">
-          <div className="Image text-center">
-            <img src={safe1} className="img-fluid w-75"/>
-
-            <div className="box text-center">
-              <text className="heading1">Sanitized Premises</text>
-              <p className="">Thoroughly sanitized commute Vehicles, Hotel rooms and premises</p>
-            </div>
-          </div>
-
-          <div className="Image text-center">
-            <img src={safe2} className="img-fluid w-75"/>
-
-            <div className="box text-center">
-              <text className="heading1">Sanitized Premises</text>
-              <p className="">Thoroughly sanitized commute Vehicles, Hotel rooms and premises</p>
-            </div>
-          </div>
-
-
-          <div className="Image text-center">
-            <img src={safe3} className="img-fluid w-75"/>
-
-            <div className="box text-center">
-              <text className="heading1">Sanitized Premises</text>
-              <p className="">Thoroughly sanitized commute Vehicles, Hotel rooms and premises</p>
-            </div>
-          </div>
-
-
-          <div className="Image text-center">
-            <img src={safe4} className="img-fluid w-75"/>
-
-            <div className="box text-center">
-              <text className="heading1">Sanitized Premises</text>
-              <p className="">Thoroughly sanitized commute Vehicles, Hotel rooms and premises</p>
-            </div>
-          </div>
-          </div>
-      </div>  
-    </div> */}
     </>
   );
 }
