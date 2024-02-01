@@ -2,6 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { MdOutlineClose } from "react-icons/md";
+import { IoMdHome } from "react-icons/io";
+import { SiYourtraveldottv } from "react-icons/si";
+import { MdMapsHomeWork } from "react-icons/md";
+import { FaNewspaper } from "react-icons/fa6";
 
 const PopUp = ({
   onclick,
@@ -16,6 +20,7 @@ const PopUp = ({
   const thisbtn = () => {
     console.log("this btn", isCoverVisible);
   };
+  let iconStyles = { color: "red", fontSize: "1.5rem", marginLeft: "20px" };
   return (
     <Wrapper>
       <div
@@ -23,7 +28,7 @@ const PopUp = ({
         onclick={(e) => e.stopPropagation()}
       >
         <div className="close-btn" onClick={() => setShowPopUp(false)}>
-          <MdOutlineClose style={{ color: "white" }} />
+          <MdOutlineClose className="close-icon" />
         </div>
         <div className="links-container">
           <div>
@@ -33,7 +38,10 @@ const PopUp = ({
               </Link>
             </div>
           </div>
-          <div className="search-container" onclick={(e)=>e.stopPropagation()}>
+          <div
+            className="search-container"
+            onclick={(e) => e.stopPropagation()}
+          >
             <input
               type="text"
               // className="desti"
@@ -44,7 +52,7 @@ const PopUp = ({
                 setSearchQuery(e.target.value);
               }}
               style={{
-                maxWidth: "200px",
+                maxWidth: "280px",
                 height: "50%",
                 marginTop: "13px",
                 padding: "15px",
@@ -57,28 +65,30 @@ const PopUp = ({
             <ul>
               <li>
                 <Link to="/" className="nav-link">
+                  <IoMdHome />
                   Home
                 </Link>
               </li>
               <li>
                 <Link to="/attours" className="nav-link">
+                  <SiYourtraveldottv style={{ iconStyles }} />
                   Tour
                 </Link>
               </li>
               <li>
                 <Link to="/atstays" className="nav-link">
+                  <MdMapsHomeWork style={{ iconStyles }} />
                   Stays
                 </Link>
               </li>
               <li>
                 <Link to="/bloggerpage" className="nav-link">
+                  <FaNewspaper style={{ iconStyles }} />
                   Blogs
                 </Link>
               </li>
             </ul>
           </nav>
-
-          <button onClick={thisbtn}>this btn</button>
         </div>
       </div>
     </Wrapper>
@@ -102,6 +112,14 @@ const Wrapper = styled.div`
       top: 1rem;
       right: 1rem;
       font-size: 2rem;
+
+      svg {
+        font-size: 3rem;
+        font-weight: bolder !important;
+        path:nth-child(2) {
+          color: rgb(106, 9, 9) !important;
+        }
+      }
     }
   }
   .show.pop-container {
@@ -136,7 +154,7 @@ const Wrapper = styled.div`
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0rem;
     div {
       width: 100%;
       justify-content: center;
@@ -147,7 +165,7 @@ const Wrapper = styled.div`
         align-items: center;
         justify-content: center;
         height: 5rem;
-        width: 5rem;
+        width: 7rem;
         a {
           img {
             width: 100%;
@@ -170,7 +188,28 @@ const Wrapper = styled.div`
           list-style: none;
           color: white;
           font-weight: bolder;
-          font-size: 1.2rem;
+          font-size: 1.8rem;
+          margin-left: 2px;
+          width: 10rem;
+          a {
+            width: 100%;
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+              svg {
+                font-size: 1.5rem;
+                font-weight: bolder !important;
+                path{
+                color: black !important;
+                }
+              }
+            
+            /* svg{
+            font-size: 2.2rem;
+            height: 2.2rem;
+            align-items: center;
+          } */
+          }
         }
       }
     }
