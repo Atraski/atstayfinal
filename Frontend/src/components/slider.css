@@ -121,12 +121,12 @@
         width:300px !important;
         margin-left:50px;
     }
-    .pre-btn{
+    /* .pre-btn{
         display:none;
     }
     .next-btn{
         display:none;
-    }
+    } */
 }
 
 @media(max-width:400px){
