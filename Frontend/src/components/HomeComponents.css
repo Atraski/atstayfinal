@@ -14,14 +14,14 @@
   }
 }
 #mobile {
-  display: none !important;
+  /* display: none !important; */
 }
 @media (max-width: 768px) {
   #pc {
     display: none;
   }
   #mobile {
-    display: block !important;
+    /* display: block !important; */
     position: fixed;
     height: 100vh;
     width: 100vw;

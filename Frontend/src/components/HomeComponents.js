@@ -317,7 +317,7 @@ export default function HomeComponents() {
           </div>
         </div>
       </div>
-      <div id="mobile">
+      <div id="mobile" style={{display: showPopUp?'block':'none'}}>
         <PopUp
           onclick={closeBtn}
           img={logo}
