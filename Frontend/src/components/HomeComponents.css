@@ -81,6 +81,9 @@
   margin-bottom: 19px;
 }
 
+.carousel p{
+  text-align: center;
+}
 /* Mobile-specific styling */
 @media (max-width: 767px) {
   .product-container {

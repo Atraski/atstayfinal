@@ -65,7 +65,7 @@ const PopUp = ({
             <ul>
               <li>
                 <Link to="/" className="nav-link">
-                  <IoMdHome />
+                  <IoMdHome className="icon1" />
                   Home
                 </Link>
               </li>
@@ -99,7 +99,7 @@ const Wrapper = styled.div`
   z-index: 15;
   .pop-container {
     background-color: gray;
-    opacity: 0.9;
+    opacity: 0.93npm n;
     position: fixed;
     top: 0;
     left: 0;
@@ -117,7 +117,7 @@ const Wrapper = styled.div`
         font-size: 3rem;
         font-weight: bolder !important;
         path:nth-child(2) {
-          color: rgb(106, 9, 9) !important;
+          color: black !important;
         }
       }
     }
@@ -196,14 +196,19 @@ const Wrapper = styled.div`
             display: flex;
             gap: 1rem;
             align-items: center;
-              svg {
-                font-size: 1.5rem;
-                font-weight: bolder !important;
-                path{
-                color: black !important;
-                }
+            svg {
+              font-size: 1.5rem;
+              font-weight: bolder !important;
+              path {
+                color: white !important;
               }
-            
+            }
+
+            a {
+              .icon1 {
+                font-size: 2rem;
+              }
+            }
             /* svg{
             font-size: 2.2rem;
             height: 2.2rem;
