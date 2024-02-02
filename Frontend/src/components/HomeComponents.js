@@ -350,7 +350,7 @@ export default function HomeComponents() {
         </button>
 
         <div className="product-container">
-          <div>
+          <div className="carousel">
             <img
               className="d-block mycard"
               src={rooms}
@@ -360,7 +360,7 @@ export default function HomeComponents() {
             <p>Rooms</p>
           </div>
 
-          <div>
+          <div className="carousel">
             <img
               className="d-block mycard"
               src={beach}
@@ -370,7 +370,7 @@ export default function HomeComponents() {
             <p>River</p>
           </div>
 
-          <div>
+          <div className="carousel">
             <img
               className="d-block mycard"
               src={NationalPark}
@@ -380,7 +380,7 @@ export default function HomeComponents() {
             <p>National Park</p>
           </div>
 
-          <div>
+          <div className="carousel">
             <img
               className="d-block mycard"
               src={lake}
@@ -390,7 +390,7 @@ export default function HomeComponents() {
             <p>Amazing View</p>
           </div>
 
-          <div>
+          <div className="carousel">
             <img
               className="d-block mycard"
               src={trending}
@@ -400,7 +400,7 @@ export default function HomeComponents() {
             <p>Trek</p>
           </div>
 
-          <div>
+          <div className="carousel">
             <img
               className="d-block mycard"
               src={camping}
@@ -410,7 +410,7 @@ export default function HomeComponents() {
             <p>Camping</p>
           </div>
 
-          <div>
+          <div className="carousel">
             <img
               className="d-block mycard"
               src={mansion}
@@ -420,7 +420,7 @@ export default function HomeComponents() {
             <p>SnowFall</p>
           </div>
 
-          <div>
+          <div className="carousel">
             <img
               className="d-block mycard"
               src={tea}
@@ -430,7 +430,7 @@ export default function HomeComponents() {
             <p> Mountains</p>
           </div>
 
-          <div>
+          <div className="carousel">
             <img
               className="d-block mycard"
               src={rooms}
@@ -440,7 +440,7 @@ export default function HomeComponents() {
             <p>Amazing View</p>
           </div>
 
-          <div>
+          <div className="carousel">
             <img
               className="d-block mycard"
               src={Beach}
@@ -449,7 +449,7 @@ export default function HomeComponents() {
             />
             <p>Beach</p>
           </div>
-          <div>
+          <div className="carousel">
             <img
               className="d-block mycard"
               src={CityView}
@@ -459,7 +459,7 @@ export default function HomeComponents() {
             <p>City View</p>
           </div>
 
-          <div>
+          <div className="carousel">
             <img
               className="d-block mycard"
               src={Heritage}
@@ -469,7 +469,7 @@ export default function HomeComponents() {
             <p>Heritage</p>
           </div>
 
-          <div>
+          <div className="carousel">
             <img
               className="d-block mycard"
               src={TreeHouse}
@@ -479,7 +479,7 @@ export default function HomeComponents() {
             <p>Tree House</p>
           </div>
 
-          <div>
+          <div className="carousel">
             <img
               className="d-block mycard"
               src={SunView}
@@ -489,7 +489,7 @@ export default function HomeComponents() {
             <p>Sun View</p>
           </div>
 
-          <div>
+          <div className="carousel">
             <img
               className="d-block mycard"
               src={Luxe}
@@ -499,7 +499,7 @@ export default function HomeComponents() {
             <p>Luxe</p>
           </div>
 
-          <div>
+          <div className="carousel">
             <img
               className="d-block mycard"
               src={BedBreakFast}
@@ -509,7 +509,7 @@ export default function HomeComponents() {
             <p>Bed & Breakfast</p>
           </div>
 
-          <div>
+          <div className="carousel">
             <img
               className="d-block mycard"
               src={Tropical}
