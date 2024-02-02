@@ -99,7 +99,7 @@ const Wrapper = styled.div`
   z-index: 15;
   .pop-container {
     background-color: gray;
-    opacity: 0.93npm n;
+    opacity: 0.95;
     position: fixed;
     top: 0;
     left: 0;
