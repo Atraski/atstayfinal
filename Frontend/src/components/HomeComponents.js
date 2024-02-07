@@ -225,7 +225,7 @@ export default function HomeComponents() {
   return (
     <>
       <div style={{ margin: "auto" }}>
-        <div className="boxrad my-3">
+        <div className="boxrad my-3" id="anywhere-container">
           <div className="subbox">
             <div
               className="any"
@@ -317,7 +317,7 @@ export default function HomeComponents() {
           </div>
         </div>
       </div>
-      <div id="mobile" style={{display: showPopUp?'block':'none'}}>
+      <div id="mobile" style={{ display: showPopUp ? "block" : "none" }}>
         <PopUp
           onclick={closeBtn}
           img={logo}
@@ -330,194 +330,262 @@ export default function HomeComponents() {
         />
       </div>
 
-      <div
-        className="product-carousel"
-        {...handlers}
-        style={{ maxWidth: "95vw" }}
-      >
-        <button className="pre-btn" onClick={btnpressprev}>
+      <div className="product-carousel-1">
+        <div className="pre-btn-1" onClick={btnpressprev}>
           <p>
             <img src={less} style={{ width: "22px" }} />
           </p>
-        </button>
-        <button className="next-btn" onClick={btnpressnext}>
+        </div>
+
+        <div
+          className="product-container"
+          {...handlers}
+          id="carousel-prod-container"
+        >
+          <div className="carousel-1">
+            <div className="img-container">
+              <img
+                className="d-block-1 mycard-1"
+                src={rooms}
+                alt="First slide"
+                onClick={() => handleProductClick(1)}
+              />
+            </div>
+            <div className="text-container">
+              <p>Rooms</p>
+            </div>
+          </div>
+
+          <div className="carousel-1">
+            <div className="img-container">
+              <img
+                className="d-block-1 mycard-1"
+                src={beach}
+                alt="First slide"
+                onClick={() => handleProductClick1(2)}
+              />
+            </div>
+            <div className="text-container">
+              <p>River</p>
+            </div>
+          </div>
+
+          <div className="carousel-1">
+            <div className="img-container">
+              <img
+                className="d-block-1 mycard-1"
+                src={NationalPark}
+                alt="First slide"
+                onClick={() => handleProductClick1(2)}
+              />
+            </div>
+            <div className="text-container">
+              <p>National Park</p>
+            </div>
+          </div>
+
+          <div className="carousel-1">
+            <div className="img-container">
+              <img
+                className="d-block-1 mycard-1"
+                src={lake}
+                alt="First slide"
+                onClick={() => handleProductClick2(3)}
+              />
+            </div>
+            <div className="text-container">
+              <p>Amazing View</p>
+            </div>
+          </div>
+
+          <div className="carousel-1">
+            <div className="img-container">
+              <img
+                className="d-block-1 mycard-1"
+                src={trending}
+                alt="First slide"
+                onClick={() => handleProductClick3(4)}
+              />
+            </div>
+            <div className="text-container">
+              <p>Trek</p>
+            </div>
+          </div>
+
+          <div className="carousel-1">
+            <div className="img-container">
+              <img
+                className="d-block-1 mycard-1"
+                src={camping}
+                alt="First slide"
+                onClick={() => handleProductClick4(5)}
+              />
+            </div>
+            <div className="text-container">
+              <p>Camping</p>
+            </div>
+          </div>
+
+          <div className="carousel-1">
+            <div className="img-container">
+              <img
+                className="d-block-1 mycard-1"
+                src={mansion}
+                alt="First slide"
+                onClick={() => handleProductClick5(6)}
+              />
+            </div>
+            <div className="text-container">
+              <p>SnowFall</p>
+            </div>
+          </div>
+
+          <div className="carousel-1">
+            <div className="img-container">
+              <img
+                className="d-block-1 mycard-1"
+                src={tea}
+                alt="First slide"
+                onClick={() => handleProductClick6(7)}
+              />
+            </div>
+            <div className="text-container">
+              <p> Mountains</p>
+            </div>
+          </div>
+
+          <div className="carousel-1">
+            <div className="img-container">
+              <img
+                className="d-block-1 mycard-1"
+                src={rooms}
+                alt="First slide"
+                onClick={() => handleProductClick7(8)}
+              />
+            </div>
+            <div className="text-container">
+              <p>Amazing View</p>
+            </div>
+          </div>
+
+          <div className="carousel-1">
+            <div className="img-container">
+              <img
+                className="d-block-1 mycard-1"
+                src={Beach}
+                alt="First slide"
+                onClick={() => handleProductClick7(8)}
+              />
+            </div>
+            <div className="text-container">
+              <p>Beach</p>
+            </div>
+          </div>
+          <div className="carousel-1">
+            <div className="img-container">
+              <img
+                className="d-block-1 mycard-1"
+                src={CityView}
+                alt="First slide"
+                onClick={() => handleProductClick7(8)}
+              />
+            </div>
+            <div className="text-container">
+              <p>City View</p>
+            </div>
+          </div>
+
+          <div className="carousel-1">
+            <div className="img-container">
+              <img
+                className="d-block-1 mycard-1"
+                src={Heritage}
+                alt="First slide"
+                onClick={() => handleProductClick7(8)}
+              />
+            </div>
+            <div className="text-container">
+              <p>Heritage</p>
+            </div>
+          </div>
+
+          <div className="carousel-1">
+            <div className="img-container">
+              <img
+                className="d-block-1 mycard-1"
+                src={TreeHouse}
+                alt="First slide"
+                onClick={() => handleProductClick7(8)}
+              />
+            </div>
+            <div className="text-container">
+              <p>Tree House</p>
+            </div>
+          </div>
+
+          <div className="carousel-1">
+            <div className="img-container">
+              <img
+                className="d-block-1 mycard-1"
+                src={SunView}
+                alt="First slide"
+                onClick={() => handleProductClick7(8)}
+              />
+            </div>
+            <div className="text-container">
+              <p>Sun View</p>
+            </div>
+          </div>
+
+          <div className="carousel-1">
+            <div className="img-container">
+              <img
+                className="d-block-1 mycard-1"
+                src={Luxe}
+                alt="First slide"
+                onClick={() => handleProductClick7(8)}
+              />
+            </div>
+            <div className="text-container">
+              <p>Luxe</p>
+            </div>
+          </div>
+
+          <div className="carousel-1">
+            <div className="img-container">
+              <img
+                className="d-block-1 mycard-1"
+                src={BedBreakFast}
+                alt="First slide"
+                onClick={() => handleProductClick7(8)}
+              />
+            </div>
+            <div className="text-container">
+              <p>Bed & Breakfast</p>
+            </div>
+          </div>
+
+          <div className="carousel-1">
+            <div className="img-container">
+              <img
+                className="d-block-1 mycard-1"
+                src={Tropical}
+                alt="First slide"
+                onClick={() => handleProductClick7(8)}
+              />
+            </div>
+            <div className="text-container">
+              <p>Tropical</p>
+            </div>
+          </div>
+        </div>
+        <div className="next-btn-1" onClick={btnpressnext}>
           <p>
             <img
               src={less}
               style={{ width: "22px", transform: "scaleX(-1)" }}
             />
           </p>
-        </button>
-
-        <div className="product-container">
-          <div className="carousel">
-            <img
-              className="d-block mycard"
-              src={rooms}
-              alt="First slide"
-              onClick={() => handleProductClick(1)}
-            />
-            <p>Rooms</p>
-          </div>
-
-          <div className="carousel">
-            <img
-              className="d-block mycard"
-              src={beach}
-              alt="First slide"
-              onClick={() => handleProductClick1(2)}
-            />
-            <p>River</p>
-          </div>
-
-          <div className="carousel">
-            <img
-              className="d-block mycard"
-              src={NationalPark}
-              alt="First slide"
-              onClick={() => handleProductClick1(2)}
-            />
-            <p>National Park</p>
-          </div>
-
-          <div className="carousel">
-            <img
-              className="d-block mycard"
-              src={lake}
-              alt="First slide"
-              onClick={() => handleProductClick2(3)}
-            />
-            <p>Amazing View</p>
-          </div>
-
-          <div className="carousel">
-            <img
-              className="d-block mycard"
-              src={trending}
-              alt="First slide"
-              onClick={() => handleProductClick3(4)}
-            />
-            <p>Trek</p>
-          </div>
-
-          <div className="carousel">
-            <img
-              className="d-block mycard"
-              src={camping}
-              alt="First slide"
-              onClick={() => handleProductClick4(5)}
-            />
-            <p>Camping</p>
-          </div>
-
-          <div className="carousel">
-            <img
-              className="d-block mycard"
-              src={mansion}
-              alt="First slide"
-              onClick={() => handleProductClick5(6)}
-            />
-            <p>SnowFall</p>
-          </div>
-
-          <div className="carousel">
-            <img
-              className="d-block mycard"
-              src={tea}
-              alt="First slide"
-              onClick={() => handleProductClick6(7)}
-            />
-            <p> Mountains</p>
-          </div>
-
-          <div className="carousel">
-            <img
-              className="d-block mycard"
-              src={rooms}
-              alt="First slide"
-              onClick={() => handleProductClick7(8)}
-            />
-            <p>Amazing View</p>
-          </div>
-
-          <div className="carousel">
-            <img
-              className="d-block mycard"
-              src={Beach}
-              alt="First slide"
-              onClick={() => handleProductClick7(8)}
-            />
-            <p>Beach</p>
-          </div>
-          <div className="carousel">
-            <img
-              className="d-block mycard"
-              src={CityView}
-              alt="First slide"
-              onClick={() => handleProductClick7(8)}
-            />
-            <p>City View</p>
-          </div>
-
-          <div className="carousel">
-            <img
-              className="d-block mycard"
-              src={Heritage}
-              alt="First slide"
-              onClick={() => handleProductClick7(8)}
-            />
-            <p>Heritage</p>
-          </div>
-
-          <div className="carousel">
-            <img
-              className="d-block mycard"
-              src={TreeHouse}
-              alt="First slide"
-              onClick={() => handleProductClick7(8)}
-            />
-            <p>Tree House</p>
-          </div>
-
-          <div className="carousel">
-            <img
-              className="d-block mycard"
-              src={SunView}
-              alt="First slide"
-              onClick={() => handleProductClick7(8)}
-            />
-            <p>Sun View</p>
-          </div>
-
-          <div className="carousel">
-            <img
-              className="d-block mycard"
-              src={Luxe}
-              alt="First slide"
-              onClick={() => handleProductClick7(8)}
-            />
-            <p>Luxe</p>
-          </div>
-
-          <div className="carousel">
-            <img
-              className="d-block mycard"
-              src={BedBreakFast}
-              alt="First slide"
-              onClick={() => handleProductClick7(8)}
-            />
-            <p>Bed & Breakfast</p>
-          </div>
-
-          <div className="carousel">
-            <img
-              className="d-block mycard"
-              src={Tropical}
-              alt="First slide"
-              onClick={() => handleProductClick7(8)}
-            />
-            <p>Tropical</p>
-          </div>
         </div>
       </div>
 

@@ -22,6 +22,7 @@ import "./room.css";
 
 import Footer from "./Footer.js";
 import { useLocation } from "react-router-dom";
+import { API_2 } from "../api/api.js";
 // import ExampleCarouselImage from 'components/ExampleCarouselImage';
 
 // import React from 'https://cdn.skypack.dev/react@17.0.1';
@@ -136,9 +137,7 @@ function Rooms() {
 
   const fetchDataFromServer = async () => {
     try {
-      const response = await fetch(
-        `http://localhost:5000/api/rooms/${params.id}`
-      );
+      const response = await fetch(`${API_2}${params.id}`);
       const data = await response.json();
       console.log(data);
 
@@ -295,7 +294,6 @@ function Rooms() {
       <div className="flexs" id="short-img">
         {mm4.map((data, index) =>
           data.images.map((mmcs, i) => (
-            
             <img
               key={index}
               src={mmcs.image1}
@@ -326,7 +324,7 @@ function Rooms() {
         </div>
 
         <h2 className="ps-4 colorss">Traditional Huts</h2>
-        
+
         {mm4.map((nextm) => {
           return (
             <>
@@ -365,8 +363,9 @@ function Rooms() {
                 {/* </Carousel> */}
               </div>
               <div
-                className="container nonflex" id="outerdiv"
-                style={{ height: "auto", display: "flex"}}
+                className="container nonflex"
+                id="outerdiv"
+                style={{ height: "auto", display: "flex" }}
               >
                 <div
                   style={{
@@ -456,7 +455,8 @@ function Rooms() {
                     >
                       <h4 className="colorss">Room facilities</h4>
                     </div>
-                    <div className="facility"
+                    <div
+                      className="facility"
                       style={{
                         display: "flex",
                         justifyContent: "space-between",
@@ -525,7 +525,7 @@ function Rooms() {
                       &nbsp;&nbsp;<span>></span>
                     </div>
                   </div>
-                  
+
                   {/* 3D Modal */}
                   {isModalOpen && (
                     <div className="modal-3d-overlay">
