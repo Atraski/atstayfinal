@@ -15,6 +15,7 @@ import { useParams } from "react-router-dom";
 import moment from "moment";
 import { DatePicker } from "antd";
 import { Link } from "react-router-dom";
+import { API_2 } from "../api/api";
 const { Rangepicker } = DatePicker;
 
 function AccordionItem({}) {
@@ -135,9 +136,7 @@ function Atstaynextpage() {
 
   const fetchDataFromServer = async () => {
     try {
-      const response = await fetch(
-        `http://localhost:5000/api/rooms/${params.id}`
-      );
+      const response = await fetch(`${API_2}${params.id}`);
       const data = await response.json();
       console.log(data, "mmm");
 
