@@ -3,11 +3,11 @@ require("dotenv").config({ path: "./.env" });
 const crypto = require("crypto");
 const app = express();
 const nodemailer = require("nodemailer"); // Import Nodemailer
-require("./Config");
-const s = require("./Formatstay");
-const Room = require("./room");
+require("./db/db.js");
+const s = require("./model/Formatstay");
+const Room = require("./model/room.js");
 
-const form = require("./Formm");
+const form = require("./model/Formm.js");
 const pdf = require("html-pdf");
 var instance = require("./Razorpay");
 const bodyParser = require("body-parser");
@@ -17,7 +17,11 @@ const cors = require("cors");
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 
-app.listen(process.env.PORT);
+// Running the server
+const PORT = process.env.PORT;
+app.listen(PORT, () => {
+  console.log("connected on PORT ", PORT);
+});
 
 const updatedStatus = {};
 
