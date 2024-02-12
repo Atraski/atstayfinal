@@ -134,6 +134,13 @@ function Atstaynextpage() {
     setDatass(jsondata);
   }, [r1, r2, r3]);
 
+  useEffect(() => {
+    const scrollToTop = () => {
+      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    };
+    scrollToTop();
+  });
+
   const fetchDataFromServer = async () => {
     try {
       const response = await fetch(`${API_2}${params.id}`);
