@@ -219,7 +219,7 @@ const Wrapper = styled.div`
       }
     }
   }
-  @media (min-width: 768px) {
+  @media (min-width: 769px) {
     .pop-container {
       display: none !important;
     }

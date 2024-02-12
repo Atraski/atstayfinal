@@ -11,7 +11,7 @@ export default function Navbar() {
   return (
     <div>
         <div className="nav">
-            <div className="container-fluid nav-top p-2 d-flex justify-content-between mb-4">
+            <div className="container-fluid nav-top p-2 d-flex justify-content-between ">
                 <div className="navtopleft">
                  <Link to="https://www.facebook.com/atraskitravel?mibextid=nW3QTL"> <i class="fa-brands fa-facebook-f mx-4" style={{color:"white"}}></i> </Link>
                  <Link to="https://www.instagram.com/atstaysbyatraski/?igshid=MzRlODBiNWFlZA%3D%3D"> <i class="fa-brands fa-instagram" style={{color:"white"}}></i></Link>

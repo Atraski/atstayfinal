@@ -27,6 +27,7 @@ import NationalPark from "../images/NationalPark.png";
 import BedBreakFast from "../images/Bed&Breakfast.png";
 import Tropical from "../images/Tropical.png";
 import Luxe from "../images/Luxe.png";
+import Mountains from "../images/Mountains.png";
 // import './HomeComponents.css';
 import Footer from "./Footer";
 import "./HomeComponents.css";
@@ -225,26 +226,26 @@ export default function HomeComponents() {
   return (
     <>
       <div style={{ margin: "auto" }}>
-        <div className="boxrad my-3" id="anywhere-container">
-          <div className="subbox">
-            <div
-              className="any"
-              ref={anywhereRef}
-              onClick={(e) => {
-                e.stopPropagation();
-                setShowPopUp(true);
-                openbox();
-              }}
-            >
-              AnyWhere
-            </div>
+        {/*<div className="boxrad my-3" id="anywhere-container">
+        <div className="subbox">
+          <div
+            className="any"
+            ref={anywhereRef}
+            onClick={(e) => {
+              e.stopPropagation();
+              setShowPopUp(true);
+              openbox();
+            }}
+          >
+            AnyWhere
           </div>
         </div>
+          </div>*/}
 
-        <div className="coverss">
+        <div className="coverss" style={{ marginTop: "-1px" }}>
           <div
             id="pc"
-            className={`cover ${isCoverVisible ? "visible" : ""}`}
+            className="visible"
             ref={coverRef}
             style={{
               display: "flex",
@@ -254,7 +255,7 @@ export default function HomeComponents() {
           >
             <nav
               className="navbar navbar-expand-xl navbar-light"
-              style={{ width: "668px" }}
+              style={{ width: "100vw" }}
             >
               <div
                 className="imap"
@@ -269,7 +270,7 @@ export default function HomeComponents() {
                   <img src={logo} alt="Logo" className="logoimg" />
                 </Link>
 
-                <div className="smtp" id="" style={{ width: "300px" }}>
+                <div className="smtp" id="" style={{ width: "295px" }}>
                   <ul className="navbar-nav falja">
                     <li className="nav-item">
                       <Link to="/" className="nav-link">
@@ -302,7 +303,7 @@ export default function HomeComponents() {
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     style={{
-                      maxWidth: "150px",
+                      maxWidth: "200px",
                       height: "0px",
                       marginTop: "13px",
                       padding: "15px",
@@ -317,6 +318,26 @@ export default function HomeComponents() {
           </div>
         </div>
       </div>
+      <div
+        className="boxrad my-3"
+        id="anywhere-containers"
+       
+      >
+        <div className="subbox">
+          <div
+            className="any"
+            ref={anywhereRef}
+            onClick={(e) => {
+              e.stopPropagation();
+              setShowPopUp(true);
+              // openbox();
+            }}
+          >
+            AnyWhere
+          </div>
+        </div>
+      </div>
+
       <div id="mobile" style={{ display: showPopUp ? "block" : "none" }}>
         <PopUp
           onclick={closeBtn}
@@ -331,7 +352,13 @@ export default function HomeComponents() {
       </div>
 
       <div className="product-carousel-1">
-        <div className="pre-btn-1" onClick={btnpressprev}>
+        <div
+          className="pre-btn-1"
+          onClick={(e) => {
+            btnpressprev();
+            e.stopPropagation();
+          }}
+        >
           <p>
             <img src={less} style={{ width: "22px" }} />
           </p>
@@ -366,7 +393,7 @@ export default function HomeComponents() {
               />
             </div>
             <div className="text-container">
-              <p>River</p>
+              <p>Beach</p>
             </div>
           </div>
 
@@ -394,7 +421,7 @@ export default function HomeComponents() {
               />
             </div>
             <div className="text-container">
-              <p>Amazing View</p>
+              <p>Farms</p>
             </div>
           </div>
 
@@ -444,7 +471,7 @@ export default function HomeComponents() {
             <div className="img-container">
               <img
                 className="d-block-1 mycard-1"
-                src={tea}
+                src={Mountains}
                 alt="First slide"
                 onClick={() => handleProductClick6(7)}
               />
@@ -478,7 +505,7 @@ export default function HomeComponents() {
               />
             </div>
             <div className="text-container">
-              <p>Beach</p>
+              <p>River</p>
             </div>
           </div>
           <div className="carousel-1">
@@ -579,7 +606,13 @@ export default function HomeComponents() {
             </div>
           </div>
         </div>
-        <div className="next-btn-1" onClick={btnpressnext}>
+        <div
+          className="next-btn-1"
+          onClick={(e) => {
+            btnpressnext();
+            e.stopPropagation();
+          }}
+        >
           <p>
             <img
               src={less}
