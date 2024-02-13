@@ -117,7 +117,7 @@
   .product-carousel-1 .next-btn-1 {
     /* background-color: blueviolet; */
     height: 100%;
-    width: 4rem;
+    width: 3rem;
     background-color: white;
     display: grid;
     place-content: center;

@@ -42,6 +42,7 @@ export default function HomeComponents() {
   const [searchQuery, setSearchQuery] = useState("");
   const [showPopUp, setShowPopUp] = useState(false);
   const [isCoverVisible, setIsCoverVisible] = useState(false);
+  const [filteredProducts, setFilteredProducts] = useState(productData);
 
   const btnpressprev = () => {
     // const box = document.getElementById('box'); // Get the element by its id
@@ -214,9 +215,13 @@ export default function HomeComponents() {
       document.removeEventListener("click", handleOutsideClick);
     };
   }, []);
-  const filteredProducts = imgs.filter((img) =>
-    img.place.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+
+  useEffect(() => {
+    const data = imgs.filter((img) =>
+      img.place.toLowerCase().includes(searchQuery.toLowerCase()) || img.trip.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+    setFilteredProducts(data);
+  }, [searchQuery]);
   //
 
   const closeBtn = () => {
@@ -318,11 +323,7 @@ export default function HomeComponents() {
           </div>
         </div>
       </div>
-      <div
-        className="boxrad my-3"
-        id="anywhere-containers"
-       
-      >
+      <div className="boxrad my-3" id="anywhere-containers">
         <div className="subbox">
           <div
             className="any"
@@ -631,7 +632,7 @@ export default function HomeComponents() {
           justifyContent: "center",
         }}
       >
-        {imgs.map((elm) => {
+        {filteredProducts.map((elm) => {
           return (
             <>
               <div className="" style={{ display: "flex" }}>
